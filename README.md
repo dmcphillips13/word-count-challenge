@@ -2,6 +2,10 @@
 
 Simple overview of use/purpose.
 
+# Deployed
+
+https://word-count-challenge.herokuapp.com/
+
 ## Description
 
 An in-depth paragraph about your project and overview of use.
