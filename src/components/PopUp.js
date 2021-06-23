@@ -1,8 +1,7 @@
-import '../App.css';
-
 const PopUp = ({
   toggle,
   characterCount,
+  characterNoSpaceCount,
   wordCount,
   sentenceCount,
   paragraphCount,
@@ -12,37 +11,58 @@ const PopUp = ({
   const handleClick = () => {
     toggle();
   };
+  console.log(bigrams);
   return (
     <div className="PopUp">
-      <div className="modal-content">
+      <div className="PopUp-content">
         <div className="close-container">
-          <p className="close" onClick={handleClick}>
+          <h1 className="close" onClick={handleClick}>
             X
-          </p>
+          </h1>
         </div>
         <ul>
-          <li>Character Count: {characterCount}</li>
-          <li>Word Count: {wordCount}</li>
-          <li>Sentence Count: {sentenceCount}</li>
-          <li>Paragraph Count: {paragraphCount}</li>
-          <li>Bigram Count: {Object.keys(bigrams).length}</li>
-          {Object.entries(words).length ? (
-            <li>
-              Top Words:
-              <ul>
-                {Object.entries(words)
-                  .sort((a, b) => b[1] - a[1])
-                  .filter((entry, idx) => idx < 5)
-                  .map(([word, count], idx) => {
-                    return (
-                      <li key={idx}>
-                        {word}: {count}
-                      </li>
-                    );
-                  })}
-              </ul>
-            </li>
-          ) : null}
+          <li>Characters: {characterCount}</li>
+          <li>Characters Excluding Spaces: {characterNoSpaceCount}</li>
+          <li>Words: {wordCount}</li>
+          <li>Sentences: {sentenceCount}</li>
+          <li>Paragraphs: {paragraphCount}</li>
+          <li>Bigrams: {Object.keys(bigrams).length}</li>
+          <div className="top">
+            {Object.entries(words).length ? (
+              <li>
+                Most Popular Words:
+                <ul>
+                  {Object.entries(words)
+                    .sort((a, b) => b[1] - a[1])
+                    .filter((entry, idx) => idx < 5)
+                    .map(([word, count], idx) => {
+                      return (
+                        <li key={idx}>
+                          {word}: {count}
+                        </li>
+                      );
+                    })}
+                </ul>
+              </li>
+            ) : null}
+            {Object.entries(bigrams).length ? (
+              <li>
+                Most Popular Bigrams:
+                <ul>
+                  {Object.entries(bigrams)
+                    .sort((a, b) => b[1] - a[1])
+                    .filter((entry, idx) => idx < 5)
+                    .map(([bigram, count], idx) => {
+                      return (
+                        <li key={idx}>
+                          {bigram}: {count}
+                        </li>
+                      );
+                    })}
+                </ul>
+              </li>
+            ) : null}
+          </div>
         </ul>
       </div>
     </div>

@@ -1,22 +1,29 @@
 * {
   font-family: sans-serif;
-  background-color: #191414;
 }
 
 .app-container {
+  height: 100vh;
+  background-color: #191414;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 textarea {
+  background-color: #191414;
   resize: none;
   border-radius: 5px;
-  height: 92vh;
+  height: 90vh;
   width: 92vw;
   margin: 1vh 1vw;
   color: #ffffff;
   outline: none;
+}
+
+.button-container {
+  color: white;
+  font-weight: bold;
 }
 
 button {
@@ -31,16 +38,22 @@ button {
 .PopUp {
   position: fixed;
   left: 25%;
-  top: 30%;
+  top: 10%;
   width: 50%;
   border: 1px solid #ffffff;
   border-radius: 1em;
-  background-color: #191414;
-  color: #1db954;
+  background-color: #1db954;
+  color: #ffffff;
   font-weight: bold;
 }
 
 .close {
-  padding: 0 2rem;
+  padding: 0 1rem;
   text-align: right;
+  color: #191414;
+}
+
+.top {
+  display: flex;
+  justify-content: space-around;
 }
