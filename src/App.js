@@ -26,7 +26,7 @@ const App = () => {
       .filter((word) => word !== '')
       .forEach((word, idx) => {
         if (idx !== 0) {
-          bigramsHash[`${prev} ${word}`] = true;
+          bigramsHash[`${prev.toLowerCase()} ${word.toLowerCase()}`] = true;
         }
         prev = word;
       });
@@ -38,7 +38,9 @@ const App = () => {
       .split(' ')
       .filter((word) => word !== '')
       .forEach((word) =>
-        wordHash[word] ? (wordHash[word] += 1) : (wordHash[word] = 1)
+        wordHash[word.toLowerCase()]
+          ? (wordHash[word.toLowerCase()] += 1)
+          : (wordHash[word.toLowerCase()] = 1)
       );
     setWords(wordHash);
   }, [text]);
@@ -52,13 +54,15 @@ const App = () => {
   };
 
   return (
-    <div className={'container' + seen ? ' during-seen' : ''}>
+    <div className="app-container">
       <textarea
         value={text}
         placeholder="Input text here"
         onChange={updateText}
       ></textarea>
-      <button onClick={togglePop}>Word Count</button>
+      <div className="button-container">
+        <button onClick={togglePop}>Word Count</button>
+      </div>
       {seen && (
         <PopUp
           toggle={togglePop}
