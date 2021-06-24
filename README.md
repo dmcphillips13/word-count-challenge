@@ -1,69 +1,41 @@
-# Project Title
+# 2. Word Count Challenge
 
-Simple overview of use/purpose.
+A simple word count application
 
-# Deployed
+# Deployed Link
 
 https://word-count-challenge.herokuapp.com/
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+A word count application that provides statistics for the total number of characters, characters excluding spaces, words, sentences, paragraphs, and bigrams. Additionally, the top words and bigrams are displayed. Either type or paste a passage of text into the input area before pressing “control+shift+c” or clicking the word count button to see the results.
 
 ## Getting Started
 
 ### Dependencies
 
-- Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-- ex. Windows 10
+- You’ll need to have Node >= 10.16 and npm >= 5.6 on your machine.
 
 ### Installing
 
-- How/where to download your program
-- Any modifications needed to be made to files/folders
+- Clone/download GitHub repository
+- Run `npm i` in the project directory to install dependencies
 
 ### Executing program
 
-- How to run the program
-- Step-by-step bullets
+In the project directory, you can run:
 
-```
-code blocks for commands
-```
+# `npm start`
 
-## Help
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Any advise for common problems or issues.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-```
-command to run if program contains helper info
-```
+You can also view a deployed version on Heroku [here](https://word-count-challenge.herokuapp.com/).
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-- 0.2
-  - Various bug fixes and optimizations
-  - See [commit change]() or See [release history]()
-- 0.1
-  - Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-
-- [awesome-readme](https://github.com/matiassingers/awesome-readme)
-- [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-- [dbader](https://github.com/dbader/readme-template)
-- [zenorocha](https://gist.github.com/zenorocha/4526327)
-- [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Denis McPhillips  
+[LinkedIn](https://www.linkedin.com/in/denismcphillips/)
