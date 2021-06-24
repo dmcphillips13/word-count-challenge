@@ -1,20 +1,14 @@
 # 2. Word Count Challenge
 
-A simple word count application
-
-# Deployed Link
-
-https://word-count-challenge.herokuapp.com/
-
 ## Description
 
-A word count application that provides statistics for the total number of characters, characters excluding spaces, words, sentences, paragraphs, and bigrams. Additionally, the top words and bigrams are displayed. Either type or paste a passage of text into the input area before pressing “control+shift+c” or clicking the word count button to see the results.
+A word count application that provides statistics for the total number of characters, characters excluding spaces, words, sentences, paragraphs, and bigrams. Additionally, the top words and bigrams are displayed. Either type or paste a passage of text into the input area before pressing “control+shift+c” or clicking the button to see the results.
 
 ## Getting Started
 
 ### Dependencies
 
-- You’ll need to have Node >= 10.16 and npm >= 5.6 on your machine.
+- You’ll need to have Node >= 10.16 and npm >= 5.6 on your machine
 
 ### Installing
 
@@ -23,17 +17,8 @@ A word count application that provides statistics for the total number of charac
 
 ### Executing program
 
-In the project directory, you can run:
-
-# `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-You can also view a deployed version on Heroku [here](https://word-count-challenge.herokuapp.com/).
+- In the project directory, run `npm start` and open [http://localhost:3000](http://localhost:3000) to view it in the browser
+- You can also view a deployed version on Heroku [here](https://word-count-challenge.herokuapp.com/)
 
 ## Authors
 

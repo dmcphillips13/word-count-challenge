@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import PopUp from './components/PopUp';
 import './App.css';
+import PopUp from './components/PopUp';
 import KeyboardEventHandler from 'react-keyboard-event-handler';
 
 const App = () => {
@@ -15,14 +15,21 @@ const App = () => {
   const [seen, setSeen] = useState(false);
 
   useEffect(() => {
-    setCharacterCount(text.split('').filter((char) => char !== '\n').length);
+    let localText = JSON.parse(localStorage.getItem('text'));
+    if (localText) setText(localText);
+  }, []);
 
-    setCharacterNoSpaceCount(
-      text.split('').filter((char) => char !== ' ' && char !== '\n').length
-    );
+  useEffect(() => {
+    localStorage.setItem('text', JSON.stringify(text));
 
-    if (text.match(/\b(\w+)'?(\w+)?\b/g)) {
-      let rawWords = text.match(/\b(\w+)'?(\w+)?\b/g);
+    let splitText = text.split('').filter((char) => char !== '\n');
+
+    setCharacterCount(splitText.length);
+
+    setCharacterNoSpaceCount(splitText.filter((char) => char !== ' ').length);
+
+    let rawWords = text.match(/\b(\w+)'?(\w+)?\b/g);
+    if (rawWords) {
       setWordCount(rawWords.length);
 
       let prev;
@@ -35,6 +42,7 @@ const App = () => {
         }
         prev = word;
       });
+
       setBigrams(bigramsHash);
 
       let wordHash = {};
@@ -43,17 +51,19 @@ const App = () => {
           ? (wordHash[word.toLowerCase()] += 1)
           : (wordHash[word.toLowerCase()] = 1)
       );
+
       setWords(wordHash);
     } else {
       setWordCount(0);
+
       setBigrams({});
+
       setWords({});
     }
 
-    if (text.match(/[^?!.]*[?!.]/g)) {
-      setSentenceCount(
-        text.match(/[^?!.]*[?!.]/g).filter((word) => word !== '').length
-      );
+    let rawSentences = text.match(/[^?!.]*[?!.]/g);
+    if (rawSentences) {
+      setSentenceCount(rawSentences.filter((word) => word !== '').length);
     } else {
       setSentenceCount(0);
     }
